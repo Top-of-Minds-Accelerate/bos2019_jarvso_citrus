@@ -1,0 +1,29 @@
+{
+  "projectHome" : "/Users/mikaellennehag/code/bos2019_jarvso_citrus/citrus-test-scenario-schibsted",
+  "name" : "citrus-test-scenario-schibsted",
+  "description" : "",
+  "version" : "1.0-SNAPSHOT",
+  "settings" : {
+    "basePackage" : "com.accelerate.citrus",
+    "citrusVersion" : "2.7.3",
+    "springApplicationContext" : "classpath*:citrus-context.xml",
+    "springJavaConfig" : "com.consol.citrus.CitrusEndpointConfig",
+    "javaSrcDirectory" : "src/test/java/",
+    "xmlSrcDirectory" : "src/test/resources/",
+    "javaFilePattern" : "/**/*Test.java,/**/*IT.java",
+    "xmlFilePattern" : "/**/*Test.xml,/**/*IT.xml",
+    "useConnector" : true,
+    "connectorActive" : false,
+    "tabSize" : 2,
+    "build" : {
+      "@class" : "com.consol.citrus.admin.service.command.maven.MavenBuildContext",
+      "type" : "maven",
+      "properties" : [ ],
+      "command" : null,
+      "clean" : false,
+      "compile" : true,
+      "testPlugin" : "maven-failsafe",
+      "profiles" : null
+    }
+  }
+}
