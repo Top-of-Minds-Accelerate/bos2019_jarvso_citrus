@@ -20,7 +20,7 @@ import com.consol.citrus.simulator.scenario.*;
 import org.springframework.http.HttpStatus;
 
 /**
- * @author Christoph Deppisch
+ * @author Christoph Deppisch, Eric Eneroth
  */
 @Scenario("Default")
 public class DefaultScenario extends AbstractSimulatorScenario {
