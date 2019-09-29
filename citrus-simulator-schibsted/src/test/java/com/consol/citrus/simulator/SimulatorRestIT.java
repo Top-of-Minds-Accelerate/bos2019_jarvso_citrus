@@ -24,7 +24,7 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Test;
 
 /**
- * @author Christoph Deppisch
+ * @author Christoph Deppisch and Eric Eneroth
  */
 @Test
 public class SimulatorRestIT extends TestNGCitrusTestDesigner {
