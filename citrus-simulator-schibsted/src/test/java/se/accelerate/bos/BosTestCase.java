@@ -14,12 +14,12 @@ import org.testng.annotations.Test;
  * @author Eric Eneroth
  * @since 2019-09-30
  */
-public class bosTestCase extends TestNGCitrusTestRunner {
+public class BosTestCase extends TestNGCitrusTestRunner {
     @CitrusTest
     @Test
     @Parameters("testRunner")
-    public void bOSTestCase(@CitrusResource @Optional TestRunner testRunner) {
-        testRunner.echo("TODO: Code the test bosTestCase");
+    public void bosTestCase(@CitrusResource @Optional TestRunner testRunner) {
+        testRunner.echo("TODO: Code the test BosTestCase");
 
     }
 }
