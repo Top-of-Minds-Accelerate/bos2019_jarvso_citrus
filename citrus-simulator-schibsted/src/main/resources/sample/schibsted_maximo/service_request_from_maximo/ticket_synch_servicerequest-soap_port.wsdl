@@ -1,8 +1,8 @@
-
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="servicerequest.synch.ticket.schibsted.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="servicerequest.synch.ticket.schibsted.com">
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="servicerequest.synch.ticket.schibsted.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="servicerequest.synch.ticket.schibsted.com">
   <wsdl:types>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="servicerequest.synch.ticket.schibsted.com">
-    		
+
   <xsd:element name="update">
     <xsd:complexType>
       <xsd:sequence>
@@ -120,23 +120,23 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="work_notes" type="xsd:string"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="work_notes_list" type="xsd:string"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="work_start" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_number_external" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="assignment_group_external" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_vendor_classification" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="caller_id" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="resolved_at" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_vendor_status" type="xsd:string"/>
-    		
+
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    		
+
   <xsd:element name="updateResponse">
     <xsd:complexType>
       <xsd:sequence>
@@ -144,7 +144,7 @@
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    		
+
   <xsd:element name="insert">
     <xsd:complexType>
       <xsd:sequence>
@@ -261,23 +261,23 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="work_notes" type="xsd:string"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="work_notes_list" type="xsd:string"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="work_start" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_number_external" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="assignment_group_external" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_vendor_classification" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="caller_id" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="resolved_at" type="xsd:string"/>
-    			
+
         <xsd:element maxOccurs="1" minOccurs="0" name="u_vendor_status" type="xsd:string"/>
-    		
+
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    		
+
   <xsd:element name="insertResponse">
     <xsd:complexType>
       <xsd:sequence>
@@ -286,7 +286,7 @@
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    	
+
 </xsd:schema>
   </wsdl:types>
   <wsdl:message name="insertSoapIn">

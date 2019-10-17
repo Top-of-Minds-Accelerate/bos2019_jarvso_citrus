@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="servicerequest.synch.ticket.schibsted.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns0:update xmlns:ns0="http://www.service-now.com/u_vendor_task">
+         <sys_id>adbb23425bcded34ef</sys_id>
+         <u_number_external>NUM12345</u_number_external>
+      </ns0:update>
+   </soapenv:Body>
+</soapenv:Envelope>
