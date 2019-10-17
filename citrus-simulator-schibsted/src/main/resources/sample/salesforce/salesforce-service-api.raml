@@ -1,0 +1,177 @@
+#%RAML 0.8
+title: salesforce-service-api
+
+
+/customer:
+  /braze:
+    /status:
+      get:
+        description: Get all customers that were changed during the last XX days
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                      "brazeUpdateOutput": {
+                          "StatusDescription": "OK",
+                          "StatusCode": 200,
+                          "accountData": [{
+                              "Status": true,
+                              "Newsletter": null,
+                              "NewsletterId": "SvDMR1D",
+                              "LastModifiedDate": "2019 - 06 - 03 T02: 00: 49.000 Z",
+                              "AccountSpidAccount": null,
+                              "CreatedById": "005 D000000235eaIAA",
+                              "CustomerNumber": 1200972,
+                              "CreatedDate": "2019 - 06 - 03 T02: 00: 49.000 Z",
+                              "AccountEmail": null,
+                              "LastModifiedById": "005 D000000235eaIAA",
+                              "Name": "SvD Morgonrapport"
+                          }]
+                      }
+                  }
+  /{spidId}:
+    /status:
+      get:
+        description: Get customer status by PID
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    "customerExists": true,
+                    "activeCustomer": true,
+                    "activeSubscriber": true,
+                    "endOfSubscription": "2019-05-20",
+                    "canBeDeleted": false
+                  }              
+      
+          400:
+            body:
+              application/json:
+                example: |
+                  {
+                  "status": "error",
+                  "error": 
+                    {
+                      "message": "Couldn't handle the request",
+                      "code": 400,
+                      "providerHttpResponseStatusCode": null,
+                      "providerHttpResponseBody": null
+                      }
+                  }
+
+/trigger-deletion-takeout:
+  post:
+    description: Send in salesforce customer numbers
+    body:
+      application/json:
+        example: |
+          {
+          "typeOfRequest":"PERFORM_HISTORIC_DELETION",
+          "typeOfId":"Spid",
+          "requestId":"56782018-04-03 16:42:07",
+          "id":"123"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "status": "success"
+              }
+      202:
+        body:
+          application/json:
+            example: |
+              {
+                "status": "Accepted"
+              }
+      400:
+        description: A bad request was received by the server.
+        body:
+          application/json:
+            example: |
+              {
+                "status": "error",
+                "message": "Missing required fields"
+              }
+      500:
+        description: Server couldn't handle the request
+        body:
+          application/json:
+            example: |
+              {
+                "status": "error",
+                "message": "Missing required fields"
+
+              }
+/notification:
+  /deletion:
+    post:
+      description: Send status of the deletion job on the customer
+      body:
+        application/json:
+          example: |
+            { "id":"1",
+              "typeOfId":"SPiD",
+              "requestId":"123",
+              "pbUid":"5678",
+              "status":"OK"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "success"
+                }
+        400:
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "Error",
+                  "message": "Missing requierd fields"
+                }
+        500:
+          body:
+            application/json:
+              example: |
+                {
+                  "status": "Error",
+                  "message" : "Server side error"
+                }
+  /takeout:
+      post:
+        description: Send customer data as stream
+        body:
+          multipart/form-data:
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    "status" : "Success"
+                  }
+          400:
+            body:
+              application/json:
+                example: |
+                  {
+                    "status": "Error",
+                    "message": "Missing requierd fields"
+                  }
+          500:
+            body:
+              application/json:
+                example: |
+                  {
+                    "status": "Error",
+                    "message": "Server side error"
+                  }

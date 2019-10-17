@@ -1,0 +1,7 @@
+{
+	"customerExists": true,
+	"activeCustomer": true,
+	"activeSubscriber": true,
+	"endOfSubscription": "2019-05-20",
+	"canBeDeleted": false
+}

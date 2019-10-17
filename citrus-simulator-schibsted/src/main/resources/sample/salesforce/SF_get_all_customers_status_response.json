@@ -1,0 +1,32 @@
+{
+    "StatusDescription": "OK",
+    "StatusCode": "200",
+    "accountData": [
+        {
+            "Status": true,
+            "NewsletterId": "SvDMR1D",
+            "Newsletter": null,
+            "Name": "SvD Morgonrapport",
+            "LastModifiedDate": "2019-06-09T02:01:29.000Z",
+            "LastModifiedById": "005D000000235eaIAA",
+            "CustomerNumber": "50700",
+            "CreatedDate": "2019-06-09T02:01:29.000Z",
+            "CreatedById": "005D000000235eaIAA",
+            "AccountSpidAccount": null,
+            "AccountEmail": null
+        },
+        {
+            "Status": false,
+            "NewsletterId": "SvDMR1D_2",
+            "Newsletter": null,
+            "Name": "SvD Morgonrapport",
+            "LastModifiedDate": "2019-06-09T02:01:29.000Z",
+            "LastModifiedById": "005D000000235eaIAA",
+            "CustomerNumber": "50701",
+            "CreatedDate": "2019-06-09T02:01:29.000Z",
+            "CreatedById": "005D000000235eaIAA",
+            "AccountSpidAccount": null,
+            "AccountEmail": null
+        }
+	]
+}        
