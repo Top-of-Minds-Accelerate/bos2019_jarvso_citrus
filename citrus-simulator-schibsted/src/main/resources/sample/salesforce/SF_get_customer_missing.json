@@ -1,0 +1,7 @@
+{
+	"customerExists": false,
+	"activeCustomer": false,
+	"activeSubscriber": false,
+	"endOfSubscription": "",
+	"canBeDeleted": false
+}
