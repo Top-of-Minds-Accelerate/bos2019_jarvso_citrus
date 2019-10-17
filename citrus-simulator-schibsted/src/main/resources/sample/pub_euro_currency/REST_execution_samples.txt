@@ -1,0 +1,5 @@
+https://api.exchangeratesapi.io/latest?base=SEK
+
+https://api.exchangeratesapi.io/2010-01-12?base=SEK
+
+https://api.exchangeratesapi.io/latest?symbols=USD,GBP
