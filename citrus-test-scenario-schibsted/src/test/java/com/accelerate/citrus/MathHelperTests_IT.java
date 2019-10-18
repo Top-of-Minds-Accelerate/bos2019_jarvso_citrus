@@ -41,7 +41,6 @@ public class MathHelperTests_IT extends TestNGCitrusTestDesigner {
     @CitrusTest
     public void execSOAPRequestSuccess() {
 
-      variable("wso2_token", "2dfacd43-a5a7-3b34-95bc-eeb6e99fbfec");
 
     	// Get access token
     	http().client(authClient)
@@ -64,7 +63,7 @@ public class MathHelperTests_IT extends TestNGCitrusTestDesigner {
     	http().client(mathSoapClient)
         .send()
         .post()
-    	.header("Authorization","Bearer bfd2de5f-e76b-381b-91e2-20162b6c772a")
+    	.header("Authorization","Bearer ${wso2_token}")
     	.header("SOAPAction","http://tempuri.org/Add")
     	.header("Content-Type", "text/xml")
     	.header("accept","text/xml")
