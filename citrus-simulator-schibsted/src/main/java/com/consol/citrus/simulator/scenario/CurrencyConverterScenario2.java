@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * accelerate_bos2019
  */
 
-@Scenario("CurrencyConverter2")
+@Scenario("CurrencyConverter")
 //@RequestMapping(value = "/jarvso/currencyconverter", method = RequestMethod.POST)
-@RequestMapping(value = "/services/rest/simulator/currencyconverter/latest", method = RequestMethod.GET)
+@RequestMapping(value = "/services/rest/simulator/currencyconverter/2019-01-01", method = RequestMethod.GET)
 
-public class CurrencyConverterScenario extends AbstractSimulatorScenario {
+public class CurrencyConverterScenario2 extends AbstractSimulatorScenario {
 
     @Override
     public void run(ScenarioDesigner scenario) {
@@ -33,7 +33,6 @@ public class CurrencyConverterScenario extends AbstractSimulatorScenario {
                 .queryParam("base");
 */
 
-        //echo("hello world!");
 
         scenario
                 .http()
