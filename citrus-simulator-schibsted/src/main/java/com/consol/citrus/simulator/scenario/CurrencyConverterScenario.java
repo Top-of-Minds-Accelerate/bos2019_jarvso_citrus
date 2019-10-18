@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Eric Eneroth
+ * accelerate_bos2019
  */
 
 @Scenario("CurrencyConverter")

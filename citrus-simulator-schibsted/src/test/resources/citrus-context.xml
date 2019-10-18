@@ -17,7 +17,7 @@
   <!-- Test Http REST client -->
   <citrus-http:client
       id="simulatorClient"
-      request-url="http://localhost:8081/services/rest/simulator"
+      request-url="http://localhost:8080/services/rest/simulator"
       timeout="5000"/>
 
 </beans>
