@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.accelerate.citrus.team;
+package com.accelerate.citrus;
 
 import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestDesigner;
@@ -28,40 +28,32 @@ import org.testng.annotations.Test;
  * @author Lenny
  */
 @Test
-public class BOS2019MyFirstTestCase_IT extends TestNGCitrusTestDesigner {
+public class SalesForceBrazeTests_IT extends TestNGCitrusTestDesigner {
 
     /** Test Http REST client */
     @Autowired
-    private HttpClient myFirstClient;
+    private HttpClient salesforceAPI;
 
     @CitrusTest
-    public void myFirstCitrusCall() {
+    public void getBrazeStatusHit() {
     	
     	// ******************************************
-    	// 1) Execute GET request... wait for response from TOP!!
+    	// Specific user status HIT
     	// ******************************************
-    	
-    	// ****
-    	// http://ws.audioscrobbler.com/2.0/?method=album.search&album=stock%20rocker&api_key=98b13da3d837aca8a6d776b6d630c689&format=json
-    	// ****
-    	
-    	http().client(myFirstClient)
+    	http().client(salesforceAPI)
             .send()
             .get()
-            .queryParam("method","album.search")
-            .queryParam("album","stock rocker nuts")
-            .queryParam("api_key","98b13da3d837aca8a6d776b6d630c689")
-            .queryParam("format", "json")
-            .queryParam("limit", "1")
+            .path("10000")
+            .path("status")
             ;
                 
         // Wait for response... Make sure to validate the status code (http -2??) 
-    	http().client(myFirstClient)
+    	http().client(salesforceAPI)
             .receive()
             .response(HttpStatus.OK)
             ;
-
-        echo("== I DID IT, SATOR ROCKS ==");  
-		
+ 		
     }
+ 
+    
 }

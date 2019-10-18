@@ -1,11 +1,11 @@
 {
-  "projectHome" : "/Users/mikaellennehag/code/bos2019_jarvso_citrus/citrus-test-scenario-schibsted",
-  "name" : "citrus-test-scenario-schibsted",
+  "projectHome" : "/Users/mikaellennehag/code/bos2019_jarvso_citrus/citrus-simulator-schibsted",
+  "name" : "citrus-simulator-schibsted",
   "description" : "",
-  "version" : "1.0-SNAPSHOT",
+  "version" : "1.0.0",
   "settings" : {
-    "basePackage" : "com.accelerate.citrus",
-    "citrusVersion" : "2.8.0",
+    "basePackage" : "com.consol.citrus.simulator",
+    "citrusVersion" : "2.7.5",
     "springApplicationContext" : "classpath*:citrus-context.xml",
     "springJavaConfig" : "com.consol.citrus.CitrusEndpointConfig",
     "javaSrcDirectory" : "src/test/java/",

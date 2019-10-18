@@ -24,31 +24,23 @@
         <citrus:variable name="project.name" value="Citrus Integration Tests"/>
     </citrus:global-variables>
   
-  <citrus-http:client  
-      id="myFirstClient"
-      request-url="http://ws.audioscrobbler.com/2.0/"
-      timeout="5000"/>   	
- 
-   <citrus-http:client
-      id="challengeClient"
-      request-url="https://topcitrus-223613.appspot.com/api/bos/challenges"
-      timeout="5000"/>   	
-  
-  <citrus-http:client
-      id="welcomeClient"
-      request-url="https://topcitrus-223613.appspot.com/api/bos/welcome"
+  	<citrus-http:client  
+      id="currencyAPI"
+      request-url="https://api.exchangeratesapi.io"
       timeout="5000"/>   	
 
- <citrus-http:client
-      id="welcomeClientXML"
-      request-url="https://topcitrus-223613.appspot.com/api/bos/welcomeXML"
-      timeout="5000"/>  
-  
-  <citrus-http:client
-      id="ignoreClient"
-      request-url="https://topcitrus-223613.appspot.com/api/tasks/ignore"
-      timeout="5000"/>  
-     	
-     	
+  	<citrus-http:client  
+      id="salesforceAPI"
+      request-url="https://api.exchangeratesapi.io"
+      timeout="5000"/>   	
+
+	<citrus-ws:client 
+		id="mathSoapClient"
+        request-url="http://www.dneonline.com/calculator.asmx"
+        timeout="60000"/>
+
+	<!-- Default SOAP Message Factory (SOAP 1.1) -->
+	<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory"/>
+
      	
 </beans>
