@@ -16,16 +16,25 @@ public class CurrencyConverterScenario extends AbstractSimulatorScenario {
 
     @Override
     public void run(ScenarioDesigner scenario) {
+/*
         scenario
                 .http()
                 .receive()
                 .post()
                 .payload("<Lenny></Lenny>");
+*/
 
         scenario
                 .http()
                 .send()
                 .response(HttpStatus.OK)
-                .payload("<Lucky></Lucky>");
+                .payload("{\n" +
+                        "\t\"rates\": {\n" +
+                        "\t\t\"USD\": 1.1025,\n" +
+                        "\t\t\"GBP\": 0.8656\n" +
+                        "\t},\n" +
+                        "\t\"base\": \"EUR\",\n" +
+                        "\t\"date\": \"2019-10-16\"\n" +
+                        "}");
     }
 }
