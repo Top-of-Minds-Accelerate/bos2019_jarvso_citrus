@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Scenario("CurrencyConverter")
 //@RequestMapping(value = "/jarvso/currencyconverter", method = RequestMethod.POST)
-@RequestMapping(value = "/services/rest/simulator/currencyconverter", method = RequestMethod.POST)
+@RequestMapping(value = "/services/rest/simulator/currencyconverter/latest", method = RequestMethod.GET)
 
 public class CurrencyConverterScenario extends AbstractSimulatorScenario {
 
@@ -22,6 +22,14 @@ public class CurrencyConverterScenario extends AbstractSimulatorScenario {
                 .receive()
                 .post()
                 .payload("<Lenny></Lenny>");
+
+
+
+        scenario
+                .http()
+                .receive()
+                .get("/services/rest/simulator/currencyconverter/latest")
+                .queryParam("base");
 */
 
         scenario
