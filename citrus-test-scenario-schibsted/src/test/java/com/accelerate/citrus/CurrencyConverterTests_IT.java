@@ -36,7 +36,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
 
     @CitrusTest
     public void getRatesFromToday() {
-    	
+
     	// ******************************************
     	// Latest rates
     	// ******************************************
@@ -44,6 +44,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
             .send()
             .get()
             .path("latest")
+        	.header("Authorization","Bearer ${wso2_token}")
             ;
                 
         // Wait for response... Make sure to validate the status code (http -2??) 
@@ -65,6 +66,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
             .send()
             .get()
             .path("2019-01-01")
+        	.header("Authorization","${wso2_token}")
             ;
                 
         // Wait for response... Make sure to validate the status code (http -2??) 
@@ -86,6 +88,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
             .send()
             .get()
             .path("2019-01-01")
+        	.header("Authorization","${wso2_token}")
             .queryParam("symbols","USD,GBP")
             ;
                 

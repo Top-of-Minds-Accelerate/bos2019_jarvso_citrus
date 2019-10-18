@@ -18,9 +18,10 @@ package com.accelerate.citrus;
 
 import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestDesigner;
+import com.consol.citrus.http.client.HttpClient;
 import com.consol.citrus.ws.client.WebServiceClient;
 import org.springframework.core.io.ClassPathResource;
-
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
@@ -32,46 +33,51 @@ public class MathHelperTests_IT extends TestNGCitrusTestDesigner {
 
     /** Test SoHttp REST client */
     @Autowired
-    private WebServiceClient mathSoapClient;   
+    private HttpClient mathSoapClient;
+
+    @Autowired
+    private HttpClient authClient;
    
     @CitrusTest
     public void execSOAPRequestSuccess() {
 
-    	soap()
-        	.client(mathSoapClient)
-        	.send()
-        	.soapAction("http://tempuri.org/Add")
-            .payload(new ClassPathResource("templates/addRequest.xml"));
+      variable("wso2_token", "2dfacd43-a5a7-3b34-95bc-eeb6e99fbfec");
+
+    	// Get access token
+    	http().client(authClient)
+        .send()
+        .post()
+    	.header("Authorization","Basic dGVzdGp3dGNsaWVudGlkOlhZN2ttem9OemwxMDA=")
+    	.header("content-type","application/x-www-form-urlencoded")
+        .payload("grant_type=password&username=Olle&password=123")	
+        ;
     	
-    	soap().client("mathSoapClient")
-         	.receive()
-         	.schemaValidation(false)
-            .payload(new ClassPathResource("templates/addResponse.xml"))
-            .extractFromPayload("//:AddResponse/:AddResult", "addResult")
+        http().client(authClient)
+        .receive()
+        .response(HttpStatus.OK)
+     	.extractFromPayload("$['access_token']","myKey");
+
+        echo("Hit Key is: ${myKey}");
+
+
+        
+    	http().client(mathSoapClient)
+        .send()
+        .post()
+    	.header("Authorization","Bearer bfd2de5f-e76b-381b-91e2-20162b6c772a")
+    	.header("SOAPAction","http://tempuri.org/Add")
+    	.header("Content-Type", "text/xml")
+    	.header("accept","text/xml")
+        .payload(new ClassPathResource("templates/addRequest.xml")	
+        );
+    	
+        // Wait for response... Make sure to validate the status code (http -2??) 
+    	http().client(mathSoapClient)
+            .receive()
+            .response(HttpStatus.OK)
+            .schemaValidation(false)
             ;
    
-    	echo("Svaret är: ${addResult}");
-    	
-    	echo("SVARET IGEN:" + addNumbers());
-    	
-    }
-
-    public String addNumbers() {
-
-    	soap()
-    	.client(mathSoapClient)
-    	.send()
-    	.soapAction("http://tempuri.org/Add")
-        .payload(new ClassPathResource("templates/addRequest.xml"));
-
-	soap().client("mathSoapClient")
-     	.receive()
-     	.schemaValidation(false)
-        .payload(new ClassPathResource("templates/addResponse.xml"))
-        .extractFromPayload("//:AddResponse/:AddResult", "addResult")
-        ;
-	
-		return "${addResult}"; 
     	
     }
 

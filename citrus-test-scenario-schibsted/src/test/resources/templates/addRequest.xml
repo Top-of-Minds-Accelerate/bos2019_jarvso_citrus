@@ -1,4 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
 <Add xmlns="http://tempuri.org/">
 	<intA>100</intA>
   	<intB>200</intB>
-</Add> 
+</Add>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope> 
