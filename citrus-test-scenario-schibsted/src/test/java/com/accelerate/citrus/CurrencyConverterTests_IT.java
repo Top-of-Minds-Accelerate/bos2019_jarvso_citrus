@@ -44,13 +44,14 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
             .send()
             .get()
             .path("latest")
-        	.header("Authorization","Bearer ${wso2_token}")
-            ;
+        	.header("Authorization","${wso2_token}")
+        	;
                 
         // Wait for response... Make sure to validate the status code (http -2??) 
     	http().client(currencyAPI)
             .receive()
             .response(HttpStatus.OK)
+            .schemaValidation(false)
             ;
  		
     }
@@ -66,6 +67,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
             .send()
             .get()
             .path("2019-01-01")
+            .queryParam("base","NOK")
         	.header("Authorization","${wso2_token}")
             ;
                 
@@ -73,6 +75,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
     	http().client(currencyAPI)
             .receive()
             .response(HttpStatus.OK)
+            .schemaValidation(false)
             ;
  		
     }
@@ -96,6 +99,7 @@ public class CurrencyConverterTests_IT extends TestNGCitrusTestDesigner {
     	http().client(currencyAPI)
             .receive()
             .response(HttpStatus.OK)
+            .schemaValidation(false)
             ;
  		
     }
